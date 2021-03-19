@@ -13,6 +13,7 @@
 		A5B588052602E2120072E7C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B588032602E2120072E7C2 /* Main.storyboard */; };
 		A5B588072602E2130072E7C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B588062602E2130072E7C2 /* Assets.xcassets */; };
 		A5B5880A2602E2130072E7C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B588082602E2130072E7C2 /* LaunchScreen.storyboard */; };
+		A5B58816260300A30072E7C2 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B58815260300A30072E7C2 /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A5B588062602E2130072E7C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5B588092602E2130072E7C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5B5880B2602E2130072E7C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5B58815260300A30072E7C2 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				A5B587FD2602E2120072E7C2 /* AppDelegate.swift */,
 				A5B587FF2602E2120072E7C2 /* SceneDelegate.swift */,
+				A5B58815260300A30072E7C2 /* UIViewController+Extension.swift */,
 				A5B588012602E2120072E7C2 /* ViewController.swift */,
 				A5B588032602E2120072E7C2 /* Main.storyboard */,
 				A5B588062602E2130072E7C2 /* Assets.xcassets */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5B58816260300A30072E7C2 /* UIViewController+Extension.swift in Sources */,
 				A5B588022602E2120072E7C2 /* ViewController.swift in Sources */,
 				A5B587FE2602E2120072E7C2 /* AppDelegate.swift in Sources */,
 				A5B588002602E2120072E7C2 /* SceneDelegate.swift in Sources */,
