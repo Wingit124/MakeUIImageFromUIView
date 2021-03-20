@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("テストコミット")
+        
         rescueBarView.backgroundColor = UIColor(red: 160 / 255, green: 51 / 255, blue: 34 / 255, alpha: 1)
     }
     
