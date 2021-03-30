@@ -17,9 +17,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         rescueBarView.backgroundColor = UIColor(red: 160 / 255, green: 51 / 255, blue: 34 / 255, alpha: 1)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showColorPicker))
+        rescueBarView.addGestureRecognizer(tapGesture)
     }
     
-    @IBAction func tapSelectImage(_ sender: Any) {
+    @IBAction private func tapSelectImage(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
@@ -27,7 +29,14 @@ class ViewController: UIViewController {
         self.present(imagePicker, animated: true)
     }
     
-    @IBAction func tapSave(_ sender: Any) {
+    @objc private func showColorPicker(){
+        let colorPicker = UIColorPickerViewController()
+        colorPicker.selectedColor = UIColor.black // 初期カラー
+        colorPicker.delegate = self
+        self.present(colorPicker, animated: true, completion: nil)
+    }
+    
+    @IBAction private func tapSave(_ sender: Any) {
         //viewを合成して画像を生成
         UIGraphicsBeginImageContextWithOptions(captureView.frame.size, false, 1)
         captureView.layer.render(in: UIGraphicsGetCurrentContext()!)
@@ -62,5 +71,11 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         picker.dismiss(animated: true)
     }
     
+}
+
+extension ViewController: UIColorPickerViewControllerDelegate {
+    func colorPickerViewControllerDidSelectColor(_ viewController: UIColorPickerViewController) {
+        rescueBarView.backgroundColor = viewController.selectedColor
+    }
 }
 
