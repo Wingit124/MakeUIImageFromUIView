@@ -59,14 +59,23 @@
                                     <action selector="tapSelectImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gnn-b5-Uko"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="VL2-MT-Xv8">
+                                <rect key="frame" x="8" y="682" width="398" height="31"/>
+                                <connections>
+                                    <action selector="didChangeRescueBarCenterX:" destination="BYZ-38-t0r" eventType="valueChanged" id="2vU-qN-HgU"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="QY9-2i-D4E" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="11F-IZ-Rw7"/>
+                            <constraint firstItem="VL2-MT-Xv8" firstAttribute="top" secondItem="VqM-xU-SDR" secondAttribute="bottom" constant="10" id="1Hj-1H-EEb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uPI-S5-tOP" secondAttribute="trailing" constant="10" id="5qe-1Q-38Y"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uPI-S5-tOP" secondAttribute="bottom" constant="10" id="9mC-6o-3rF"/>
                             <constraint firstItem="uPI-S5-tOP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="AOY-L2-IHZ"/>
+                            <constraint firstItem="VL2-MT-Xv8" firstAttribute="centerX" secondItem="VqM-xU-SDR" secondAttribute="centerX" id="CWO-qr-F6p"/>
+                            <constraint firstItem="VL2-MT-Xv8" firstAttribute="width" secondItem="VqM-xU-SDR" secondAttribute="width" id="bkE-ji-TbC"/>
                             <constraint firstItem="QY9-2i-D4E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="iAb-4D-Ogw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QY9-2i-D4E" secondAttribute="trailing" constant="10" id="ub8-vK-gRh"/>
                             <constraint firstItem="QY9-2i-D4E" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ukf-9Q-yq6"/>
@@ -83,6 +92,8 @@
                         <outlet property="captureView" destination="QY9-2i-D4E" id="JiG-m1-THE"/>
                         <outlet property="imageView" destination="VqM-xU-SDR" id="1xB-ng-u7P"/>
                         <outlet property="rescueBarView" destination="fEl-2w-RxI" id="BJn-Pp-tJO"/>
+                        <outlet property="rescueBarViewCenterX" destination="o93-gV-TJ1" id="tje-fN-zKQ"/>
+                        <outlet property="rescueBarViewCenterXSlider" destination="VL2-MT-Xv8" id="8wU-Wo-s0j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

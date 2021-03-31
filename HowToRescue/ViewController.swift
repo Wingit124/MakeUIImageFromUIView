@@ -12,13 +12,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var captureView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var rescueBarView: UIView!
+    @IBOutlet weak var rescueBarViewCenterX: NSLayoutConstraint!
+    @IBOutlet weak var rescueBarViewCenterXSlider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         rescueBarView.backgroundColor = UIColor(red: 160 / 255, green: 51 / 255, blue: 34 / 255, alpha: 1)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showColorPicker))
         rescueBarView.addGestureRecognizer(tapGesture)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let movableRangeX = Float(captureView.bounds.width - rescueBarView.center.x - rescueBarView.bounds.width)
+        rescueBarViewCenterXSlider.maximumValue = movableRangeX
+        rescueBarViewCenterXSlider.minimumValue = -movableRangeX
+        rescueBarViewCenterXSlider.value = 0
     }
     
     @IBAction private func tapSelectImage(_ sender: Any) {
@@ -33,7 +42,12 @@ class ViewController: UIViewController {
         let colorPicker = UIColorPickerViewController()
         colorPicker.selectedColor = UIColor.black // 初期カラー
         colorPicker.delegate = self
+        colorPicker.supportsAlpha = false
         self.present(colorPicker, animated: true, completion: nil)
+    }
+    
+    @IBAction private func didChangeRescueBarCenterX(_ sender: UISlider) {
+        rescueBarViewCenterX.constant = CGFloat(sender.value)
     }
     
     @IBAction private func tapSave(_ sender: Any) {
