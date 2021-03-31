@@ -52,7 +52,7 @@ class ViewController: UIViewController {
     
     @IBAction private func tapSave(_ sender: Any) {
         //viewを合成して画像を生成
-        UIGraphicsBeginImageContextWithOptions(captureView.frame.size, false, 1)
+        UIGraphicsBeginImageContextWithOptions(captureView.frame.size, false, 0)
         captureView.layer.render(in: UIGraphicsGetCurrentContext()!)
         let rescuedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
