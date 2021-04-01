@@ -12,7 +12,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var captureView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var rescueBarView: UIView!
+    @IBOutlet weak var rescueBarViewWidth: NSLayoutConstraint!
     @IBOutlet weak var rescueBarViewCenterX: NSLayoutConstraint!
+    @IBOutlet weak var rescueBarViewWidthSlider: UISlider!
     @IBOutlet weak var rescueBarViewCenterXSlider: UISlider!
     
     override func viewDidLoad() {
@@ -24,10 +26,16 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         let movableRangeX = Float(captureView.bounds.width - rescueBarView.center.x - rescueBarView.bounds.width)
         rescueBarViewCenterXSlider.maximumValue = movableRangeX
         rescueBarViewCenterXSlider.minimumValue = -movableRangeX
         rescueBarViewCenterXSlider.value = 0
+        
+        let maximumWidth = Float(captureView.frame.width - rescueBarView.frame.width)
+        rescueBarViewWidthSlider.maximumValue = maximumWidth
+        rescueBarViewWidthSlider.minimumValue = 0
+        rescueBarViewWidthSlider.value = Float(rescueBarView.frame.width)
     }
     
     @IBAction private func tapSelectImage(_ sender: Any) {
@@ -48,6 +56,10 @@ class ViewController: UIViewController {
     
     @IBAction private func didChangeRescueBarCenterX(_ sender: UISlider) {
         rescueBarViewCenterX.constant = CGFloat(sender.value)
+    }
+    
+    @IBAction func didChangeRescueBarWidth(_ sender: UISlider) {
+        rescueBarViewWidth.constant = CGFloat(sender.value)
     }
     
     @IBAction private func tapSave(_ sender: Any) {
