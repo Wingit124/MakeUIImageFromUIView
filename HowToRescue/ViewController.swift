@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         let maximumWidth = Float(captureView.frame.width - rescueBarView.frame.width)
         rescueBarViewWidthSlider.maximumValue = maximumWidth
         rescueBarViewWidthSlider.minimumValue = 0
-        rescueBarViewWidthSlider.value = Float(rescueBarView.frame.width)
+        rescueBarViewWidthSlider.value = 0
     }
     
     @IBAction private func tapSelectImage(_ sender: Any) {
